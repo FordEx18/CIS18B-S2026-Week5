@@ -34,6 +34,17 @@ public class EnrollmentMapDemo {
         departments.computeIfAbsent("CIS", key -> new java.util.ArrayList<>()).add("SEC-102");
         System.out.println("Grouped sections: " + departments);
 
-        // TODO: Demonstrate and explain why mutable keys are hazardous in hash-based maps.
+        //Demonstration of Single element array as a mutable key example.
+        Map<int[], String> map = new HashMap<>();
+        int[] key1 = {1};
+        map.put(key1, "Original Value");
+        System.out.println("Before mutation: " + map.get(key1)); // Should print "Original Value"
+        key1[0] = 2; // Mutating the key
+        System.out.println("After mutation: " + map.get(key1)); // May print null
+        System.out.println("Map contents: " + map.keySet().stream()
+            .map(k -> java.util.Arrays.toString(k))
+            .toList());
+        //Explanation
+        System.out.println("Mutable key hazard: changing a key after insertion can lead to many issues with retrieval and integrity of the map.");
     }
 }
