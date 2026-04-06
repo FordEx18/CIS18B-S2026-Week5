@@ -24,8 +24,11 @@ public class SetComparisonDemo {
         caseInsensitive.addAll(tags);
         System.out.println("TreeSet (case-insensitive): " + caseInsensitive);
 
-        // TODO: Replace with your own comparator (e.g., by length then alphabetically).
-        Set<String> customOrder = new TreeSet<>(Comparator.comparingInt(String::length).thenComparing(String::compareTo));
+        // Custom comparator: first by length, then alphabetically
+        Comparator<String> bylength = Comparator.comparingInt(String::length);
+        Comparator<String> alphabetical = String::compareTo;
+
+        Set<String> customOrder = new TreeSet<>(bylength.thenComparing(alphabetical));
         customOrder.addAll(tags);
         System.out.println("TreeSet (custom comparator): " + customOrder);
     }
