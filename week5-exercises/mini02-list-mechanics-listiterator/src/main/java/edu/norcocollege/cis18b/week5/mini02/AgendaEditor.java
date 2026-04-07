@@ -25,8 +25,9 @@ public class AgendaEditor {
                 iterator.set("Live Demo");
                 iterator.add("Reflection");
             }
-
-            // TODO: Remove any item labeled "Optional" using iterator-safe mutation.
+            if ("Optional".equals(step)) {
+                iterator.remove();
+            }
         }
     }
 

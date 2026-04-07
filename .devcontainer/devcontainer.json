@@ -1,8 +1,8 @@
 {
   "name": "CIS-18B Week5 Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/java:1-25-bookworm",
+  "image": "mcr.microsoft.com/devcontainers/java:1-17-bookworm",
   "features": {
-    "ghcr.io/devcontainers/features/maven:1": {}
+    "ghcr.io/devcontainers-extra/features/maven-sdkman:2": {}
   },
   "customizations": {
     "vscode": {
